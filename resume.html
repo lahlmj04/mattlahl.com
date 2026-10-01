@@ -4,21 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resume | Matt Lahl's Website</title>
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <div class="page-shell">
     
 <header class="hero">
   <div class="header-stage">
-    <img src="images/fighter-left.gif" class="fighter fighter-left" alt="" aria-hidden="true">
+    <img src="images/fighter-right.gif" class="fighter fighter-left" alt="" aria-hidden="true">
 
     <div class="logo-wrap">
       <img src="images/matt-logo-transparent.png?v=5" class="main-logo" alt="Matt Lahl's Website">
-      <img src="images/explosion.gif" id="intro-explosion" class="explosion" alt="" aria-hidden="true">
+      <div id="intro-explosion" class="explosion-row" aria-hidden="true">
+        <img src="images/explosion.gif" class="explosion explosion-left" alt="">
+        <img src="images/explosion.gif" class="explosion explosion-center" alt="">
+        <img src="images/explosion.gif" class="explosion explosion-right" alt="">
+      </div>
     </div>
 
-    <img src="images/fighter-right.gif" class="fighter fighter-right" alt="" aria-hidden="true">
+    <img src="images/fighter-left.gif" class="fighter fighter-right" alt="" aria-hidden="true">
   </div>
 
   <div class="marquee" aria-label="Scrolling welcome message">
@@ -70,32 +74,42 @@
   </div>
   
 <script>
-  const explosion = document.getElementById("intro-explosion");
+  const explosionRow = document.getElementById("intro-explosion");
   const logo = document.querySelector(".main-logo");
 
   function revealLogo() {
     if (logo) logo.classList.add("revealed");
   }
 
-  if (!explosion) {
-    revealLogo();
-  } else {
-    explosion.addEventListener("error", () => {
-      explosion.style.display = "none";
-      revealLogo();
-    });
-
-    if (sessionStorage.getItem("explosionPlayed")) {
-      explosion.style.display = "none";
-      revealLogo();
-    } else {
-      sessionStorage.setItem("explosionPlayed", "true");
-      setTimeout(revealLogo, 450);
-      setTimeout(() => {
-        explosion.style.display = "none";
-      }, 1800);
-    }
+  function hideExplosions() {
+    if (explosionRow) explosionRow.classList.remove("active");
   }
+
+  function playExplosions() {
+    if (!explosionRow) return;
+
+    // Restart CSS animation cleanly each time.
+    explosionRow.classList.remove("active");
+    void explosionRow.offsetWidth;
+    explosionRow.classList.add("active");
+
+    // Keep the blast visible long enough for most short retro GIFs to play once.
+    setTimeout(hideExplosions, 1800);
+  }
+
+  revealLogo();
+
+  // If the GIF is missing, just leave the logo visible.
+  const explosionImages = document.querySelectorAll(".explosion");
+  explosionImages.forEach(img => {
+    img.addEventListener("error", () => {
+      explosionRow.style.display = "none";
+    });
+  });
+
+  // First blast shortly after page load, then repeat roughly every 10 seconds.
+  setTimeout(playExplosions, 350);
+  setInterval(playExplosions, 10000);
 </script>
 
 </body>

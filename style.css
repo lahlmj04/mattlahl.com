@@ -77,17 +77,7 @@ a:visited { color: #551a8b; }
 .fighter-left { margin-right: -100px; }
 .fighter-right { margin-left: -100px; }
 
-.explosion {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: min(330px, 70vw);
-  max-height: 170px;
-  object-fit: contain;
-  z-index: 20;
-  pointer-events: none;
-}
+
 
 .marquee {
   overflow: hidden;
@@ -304,5 +294,72 @@ footer {
 
   .resume-businessman {
     width: 120px;
+  }
+}
+
+
+/* V7 — three repeating explosion GIFs stretched across the logo */
+.logo-wrap {
+  overflow: visible;
+}
+
+.explosion-row {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 118%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.explosion-row.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.explosion-row .explosion {
+  position: static;
+  transform: none;
+  width: 38%;
+  max-width: none;
+  max-height: 190px;
+  object-fit: contain;
+  flex: 0 0 38%;
+  pointer-events: none;
+}
+
+/* Slight overlap so the three blasts read as one wide explosion */
+.explosion-left {
+  margin-right: -8%;
+}
+
+.explosion-right {
+  margin-left: -8%;
+}
+
+/* Keep mobile blasts compact but still spanning the logo */
+@media (max-width: 760px) {
+  .explosion-row {
+    width: 122%;
+  }
+
+  .explosion-row .explosion {
+    width: 40%;
+    flex-basis: 40%;
+    max-height: 125px;
+  }
+
+  .explosion-left {
+    margin-right: -10%;
+  }
+
+  .explosion-right {
+    margin-left: -10%;
   }
 }
