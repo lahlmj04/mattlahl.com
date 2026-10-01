@@ -1,0 +1,26 @@
+IMAGE FILE NAMES
+
+Put all image files inside a folder named: images
+
+Required names:
+background-tile.jpg  = the pastel repeating background you uploaded
+matt-logo.png        = the metallic "Matt Lahl's Website" logo
+fighter-left.gif     = the fighter you want on the left
+fighter-right.gif    = the fighter you want on the right
+explosion.gif        = the explosion animation that plays over the logo
+
+Folder structure:
+
+index.html
+style.css
+images/
+  background-tile.jpg
+  matt-logo.png
+  fighter-left.gif
+  fighter-right.gif
+  explosion.gif
+
+IMPORTANT:
+The first four image files are already included in this package.
+explosion.gif is NOT included yet because you haven't uploaded or selected it.
+Once you add a GIF named exactly "explosion.gif" to the images folder, the intro effect will work.

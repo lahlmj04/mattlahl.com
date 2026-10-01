@@ -3,21 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matt Lahl's World Wide Web Home Page</title>
+  <title>Matt Lahl's Website</title>
   <meta name="description" content="Matt Lahl — project coordination, procurement, operations, systems, digital media, and web portfolio.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="page-shell">
+
     <header class="hero">
-      <div class="hero-kicker">★ YOU HAVE REACHED ★</div>
-      <h1>Matt Lahl's World Wide Web Home Page</h1>
-      <p class="subtitle">Project Coordination • Procurement • Operations • Digital Media • Web</p>
+      <div class="header-stage">
+
+        <img
+          src="images/fighter-left.gif"
+          class="fighter fighter-left"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <div class="logo-wrap">
+          <img
+            src="images/matt-logo.png"
+            class="main-logo"
+            alt="Matt Lahl's Website"
+          >
+
+          <img
+            src="images/explosion.gif"
+            id="intro-explosion"
+            class="explosion"
+            alt=""
+            aria-hidden="true"
+          >
+        </div>
+
+        <img
+          src="images/fighter-right.gif"
+          class="fighter fighter-right"
+          alt=""
+          aria-hidden="true"
+        >
+
+      </div>
 
       <div class="marquee" aria-label="Scrolling welcome message">
         <div class="marquee-track">
-          ★ WELCOME TO MY PORTFOLIO ★ RESUME ★ PROJECTS ★ JOB GOALS ★ THANKS FOR VISITING THE INFORMATION SUPERHIGHWAY ★
+          ★ WELCOME TO MATT LAHL'S WEBSITE ★ PORTFOLIO ★ RESUME ★ PROJECTS ★ JOB GOALS ★ THANKS FOR VISITING ★
         </div>
       </div>
 
@@ -142,43 +173,21 @@
 
       <section id="resume" class="panel">
         <h2>★ Resume ★</h2>
-        <p>
-          Resume page coming next. For now, this section gives hiring managers the quick version:
-        </p>
+        <p>Resume page coming next. For now, this section gives hiring managers the quick version:</p>
 
         <table class="retro-table">
-          <tr>
-            <th>Strength</th>
-            <th>What I Bring</th>
-          </tr>
-          <tr>
-            <td>Project Coordination</td>
-            <td>Schedules, documentation, customer updates, cross-functional follow-up, closeout</td>
-          </tr>
-          <tr>
-            <td>Procurement</td>
-            <td>POs, vendors, pricing, delivery tracking, P2P workflows, ERP systems</td>
-          </tr>
-          <tr>
-            <td>Contracts</td>
-            <td>RFQs, GSA / State contracts, compliance, modifications, audits, portals</td>
-          </tr>
-          <tr>
-            <td>Systems</td>
-            <td>Dynamics 365 BC, Excel, Power BI, Salesforce, Smartsheet, web portals</td>
-          </tr>
-          <tr>
-            <td>Digital</td>
-            <td>Web development, graphic design, digital multimedia, ecommerce support</td>
-          </tr>
+          <tr><th>Strength</th><th>What I Bring</th></tr>
+          <tr><td>Project Coordination</td><td>Schedules, documentation, customer updates, cross-functional follow-up, closeout</td></tr>
+          <tr><td>Procurement</td><td>POs, vendors, pricing, delivery tracking, P2P workflows, ERP systems</td></tr>
+          <tr><td>Contracts</td><td>RFQs, GSA / State contracts, compliance, modifications, audits, portals</td></tr>
+          <tr><td>Systems</td><td>Dynamics 365 BC, Excel, Power BI, Salesforce, Smartsheet, web portals</td></tr>
+          <tr><td>Digital</td><td>Web development, graphic design, digital multimedia, ecommerce support</td></tr>
         </table>
       </section>
 
       <section id="goals" class="panel">
         <h2>★ What I'm Looking For ★</h2>
-        <p>
-          I'm interested in roles where I can combine coordination, systems, communication, and problem solving.
-        </p>
+        <p>I'm interested in roles where I can combine coordination, systems, communication, and problem solving.</p>
         <ul class="link-list">
           <li><a href="#contact">Project Coordinator / Junior Project Manager</a></li>
           <li><a href="#contact">Procurement / Purchasing Operations</a></li>
@@ -192,11 +201,9 @@
 
       <section id="contact" class="panel contact-panel">
         <h2>★ Contact Me!!! ★</h2>
+        <p>Replace the links below with your preferred public contact information before publishing.</p>
         <p>
-          Replace the links below with your preferred public contact information before publishing.
-        </p>
-        <p>
-          <a href="mailto:mattlahl@gmail.com">📧 EMAIL ME</a>
+          <a href="mailto:YOUR-EMAIL@example.com">📧 EMAIL ME</a>
           &nbsp; | &nbsp;
           <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
         </p>
@@ -210,6 +217,34 @@
       <p>© 1998–2026 Matt Lahl's Home Page</p>
     </footer>
   </div>
+
+  <script>
+    const explosion = document.getElementById("intro-explosion");
+    const logo = document.querySelector(".main-logo");
+
+    function revealLogo() {
+      logo.classList.add("revealed");
+    }
+
+    // If explosion.gif is missing, don't leave the logo hidden forever.
+    explosion.addEventListener("error", () => {
+      explosion.style.display = "none";
+      revealLogo();
+    });
+
+    if (sessionStorage.getItem("explosionPlayed")) {
+      explosion.style.display = "none";
+      revealLogo();
+    } else {
+      sessionStorage.setItem("explosionPlayed", "true");
+
+      setTimeout(revealLogo, 450);
+
+      setTimeout(() => {
+        explosion.style.display = "none";
+      }, 1800);
+    }
+  </script>
 
 </body>
 </html>
