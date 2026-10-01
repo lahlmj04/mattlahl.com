@@ -74,8 +74,8 @@ a:visited { color: #551a8b; }
 
 /* The source GIFs have lots of horizontal canvas; these negative margins
    bring the actual fighters visually right up against the logo. */
-.fighter-left { margin-right: -100px; }
-.fighter-right { margin-left: -100px; }
+.fighter-left { margin-right: -55px; }
+.fighter-right { margin-left: -55px; }
 
 
 
@@ -195,8 +195,8 @@ footer {
     flex-basis: 150px;
   }
 
-  .fighter-left { margin-right: -60px; }
-  .fighter-right { margin-left: -60px; }
+  .fighter-left { margin-right: -32px; }
+  .fighter-right { margin-left: -32px; }
 
   .nav {
     gap: 7px 13px;
@@ -219,8 +219,8 @@ footer {
     flex-basis: 112px;
   }
 
-  .fighter-left { margin-right: -46px; }
-  .fighter-right { margin-left: -46px; }
+  .fighter-left { margin-right: -22px; }
+  .fighter-right { margin-left: -22px; }
 
   .header-stage {
     min-height: 90px;
@@ -362,4 +362,32 @@ footer {
   .explosion-right {
     margin-left: -10%;
   }
+}
+
+
+/* V8 — Experience and job goals are now part of Resume */
+.resume-copy h3 {
+  color: #111;
+  margin: 16px 0 2px;
+  font-family: Arial, sans-serif;
+}
+
+/* Art / Multimedia / Shop placeholder pages */
+.construction-page {
+  text-align: center;
+}
+
+.under-construction-gif {
+  display: block;
+  width: 176px;
+  max-width: 70vw;
+  height: auto;
+  margin: 24px auto 12px;
+  image-rendering: pixelated;
+}
+
+.construction-copy {
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  color: #aa0000;
 }
