@@ -1,0 +1,24 @@
+WOFF2 SETUP
+
+The website is already configured to prefer:
+fonts/MotterTektura-Regular.woff2
+
+and fall back to:
+fonts/MotterTektura-Regular.otf
+
+To create the WOFF2 file on your Mac from your existing OTF:
+
+1. Open Terminal.
+2. Install the converter:
+   python3 -m pip install fonttools brotli
+
+3. Go to the folder containing your OTF, then run:
+   pyftsubset "MotterTektura Regular.otf" --flavor=woff2 --output-file="MotterTektura-Regular.woff2" --unicodes='*'
+
+4. In GitHub, upload the result to:
+   fonts/MotterTektura-Regular.woff2
+
+Keep your existing:
+   fonts/MotterTektura-Regular.otf
+
+The HTML now references style.css?v=12 to help force browsers to reload the new font CSS.

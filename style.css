@@ -369,9 +369,12 @@ footer {
 /* V11 — use actual Motter Tektura font instead of logo image */
 @font-face {
   font-family: "MotterTektura";
-  src: url("fonts/MotterTektura-Regular.otf") format("opentype");
-  font-weight: normal;
+  src:
+    url("fonts/MotterTektura-Regular.woff2") format("woff2"),
+    url("fonts/MotterTektura-Regular.otf") format("opentype");
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 .logo-wrap {
