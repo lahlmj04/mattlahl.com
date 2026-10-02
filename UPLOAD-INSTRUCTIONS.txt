@@ -1,0 +1,24 @@
+V10 UPLOAD INSTRUCTIONS
+
+This version includes the new magenta logo.
+
+Upload/replace these files:
+- index.html
+- resume.html
+- art.html
+- multimedia.html
+- shop.html
+- contact.html
+- style.css
+
+Images folder:
+- background-tile.jpg
+- fighter-left.gif
+- fighter-right.gif
+- fireball.gif
+- resume-businessman.gif
+- under-construction.gif
+- matt-logo-magenta.png
+
+You can leave the old matt-logo-transparent.png in GitHub if you want,
+but the site now points to matt-logo-magenta.png.
