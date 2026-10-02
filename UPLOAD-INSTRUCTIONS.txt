@@ -1,8 +1,6 @@
-V10 UPLOAD INSTRUCTIONS
+V11 UPLOAD INSTRUCTIONS
 
-This version includes the new magenta logo.
-
-Upload/replace these files:
+Upload/replace these files at the root of your GitHub repository:
 - index.html
 - resume.html
 - art.html
@@ -11,14 +9,18 @@ Upload/replace these files:
 - contact.html
 - style.css
 
-Images folder:
+Also upload this new folder/file:
+- fonts/MotterTektura-Regular.otf
+
+Images folder should still include:
 - background-tile.jpg
 - fighter-left.gif
 - fighter-right.gif
 - fireball.gif
 - resume-businessman.gif
 - under-construction.gif
-- matt-logo-magenta.png
 
-You can leave the old matt-logo-transparent.png in GitHub if you want,
-but the site now points to matt-logo-magenta.png.
+Changes in V11:
+- removed the logo image and replaced it with live text using the actual Motter Tektura font
+- removed fireballs from the logo area
+- made the fireballs smaller and moved them to the About Me heading on the homepage

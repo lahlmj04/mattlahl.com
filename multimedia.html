@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Multimedia | Matt Lahl's Website</title>
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
   <div class="page-shell">
@@ -14,9 +14,10 @@
     <img src="images/fighter-right.gif" class="fighter fighter-left" alt="" aria-hidden="true">
 
     <div class="logo-wrap">
-      <img src="images/matt-logo-magenta.png" class="main-logo" alt="Matt Lahl's Website">
-      <img src="images/fireball.gif" class="logo-fireball fireball-left" alt="" aria-hidden="true">
-      <img src="images/fireball.gif" class="logo-fireball fireball-right" alt="" aria-hidden="true">
+      <div class="text-logo main-logo" aria-label="Matt Lahl's Website">
+        <div class="text-logo-top">Matt Lahl's</div>
+        <div class="text-logo-bottom">Website</div>
+      </div>
     </div>
 
     <img src="images/fighter-left.gif" class="fighter fighter-right" alt="" aria-hidden="true">
@@ -64,7 +65,7 @@
 <script>
   const logo = document.querySelector(".main-logo");
   if (logo) {
-    logo.classList.add("revealed");
+    requestAnimationFrame(() => logo.classList.add("revealed"));
   }
 </script>
 
